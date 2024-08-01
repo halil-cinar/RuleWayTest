@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RuleWayTest.Dto.Result
+namespace RuleWayTest.Dto.Enum
 {
     public enum EResultStatus
     {

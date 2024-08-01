@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using RuleWayTest.Business.Abstract;
 using RuleWayTest.Dto.AddOrUpdateDto;
+using RuleWayTest.Dto.Enum;
 using RuleWayTest.Dto.Filter;
 using RuleWayTest.Dto.ListDto;
 
@@ -22,7 +23,7 @@ namespace RuleWayTest.WebAPI.Controllers
         public async Task<IActionResult> GetProducts(ProductFilter filter)
         {
             var result = await _productService.GetAll(filter);
-            if (result.Status == Dto.Result.EResultStatus.Success)
+            if (result.Status == EResultStatus.Success)
             {
                 return Ok(result.Result);
             }
@@ -33,7 +34,7 @@ namespace RuleWayTest.WebAPI.Controllers
         public async Task<IActionResult> AddProduct(ProductDto product)
         {
             var result = await _productService.Add(product);
-            if (result.Status == Dto.Result.EResultStatus.Success)
+            if (result.Status == EResultStatus.Success)
             {
                 return Ok(result.Result);
             }
@@ -45,7 +46,7 @@ namespace RuleWayTest.WebAPI.Controllers
         public async Task<IActionResult> DeleteProduct(int id)
         {
             var result = await _productService.Delete(id);
-            if (result.Status == Dto.Result.EResultStatus.Success)
+            if (result.Status == EResultStatus.Success)
             {
                 return Ok(result.Result);
             }
@@ -56,7 +57,7 @@ namespace RuleWayTest.WebAPI.Controllers
         public async Task<IActionResult> GetProduct(int id)
         {
             var result = await _productService.Get(id);
-            if (result.Status == Dto.Result.EResultStatus.Success)
+            if (result.Status == EResultStatus.Success)
             {
                 return Ok(result.Result);
             }
@@ -67,7 +68,7 @@ namespace RuleWayTest.WebAPI.Controllers
         public async Task<IActionResult> UpdateProduct(ProductDto product)
         {
             var result = await _productService.Update(product);
-            if (result.Status == Dto.Result.EResultStatus.Success)
+            if (result.Status == EResultStatus.Success)
             {
                 return Ok(result.Result);
             }

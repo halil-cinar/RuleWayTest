@@ -17,7 +17,7 @@ namespace RuleWayTest.Entity
         public int StockQuantity { get; set; }
 
         [ForeignKey(nameof(CategoryId))]
-        public CategoryEntity Category { get; set; }
+        public CategoryEntity? Category { get; set; }
 
         [NotMapped]
         public bool Live
