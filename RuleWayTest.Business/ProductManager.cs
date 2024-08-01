@@ -96,6 +96,7 @@ namespace RuleWayTest.Business
                     (string.IsNullOrEmpty(filter.Search)||(x.Title+x.Description+x.Category.Name).Contains(filter.Search))
                     &&(filter.StockMin==null||x.StockQuantity>=filter.StockMin)
                     &&(filter.StockMax==null||x.StockQuantity<=filter.StockMax)
+                    &&(filter.IsLive==false||(x.CategoryId != null && x.Category.MinStockQuantity < x.StockQuantity) )
                     );
 
                 result.Result = Mapper.Map<List<ProductListDto>>(entities);

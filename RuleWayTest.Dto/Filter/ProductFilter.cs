@@ -14,7 +14,7 @@ namespace RuleWayTest.Dto.Filter
        
         public int? StockMin { get; set; }
         public int? StockMax { get; set; }
+        public bool? IsLive { get; set; }
 
-        
     }
 }
